@@ -127,9 +127,23 @@ Connection to pungjoo.com closed by foreign host.
 ```
 
 
+## TCP keep-alive와 차이  
+
+* tcp keep-alive는 클라이언트와 서버 간 **연결을 유지하기** 위한 것.  
+
+* http keep-alive는 max와 timeout에서 의미하듯, **최대 얼마나 연결을 유지하기** 위한 것.  
+ㄴ 서버는 하나의 클라이언트에 종속될 수 없으니.  
+
+
+
+
+
 ## So  
 
   * HTTP/1.0에 비하여, HTTP/1.1에서는 Default가 [Connection : keep-alive]  
+  * 3 way-handshake를 줄여, traffic, latency 감소  
+  * 매 연결마다 socket fd 할당 등 서버의 부하 감소  
+  
   
 
 
